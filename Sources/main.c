@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
+#include "../Headers/fonctions.h"
 
 int main(){
 
@@ -7,6 +9,7 @@ int main(){
 
     do
     {
+        system("cls");
         printf("----MENU GESTION DES ETUDIANTS----\n");
         printf("1-Nouvel Etudiant\n");
         printf("2-Afficher bulletin\n");
@@ -18,19 +21,16 @@ int main(){
         printf("votre choix !");
         scanf("%d", &choix);
 
+        switch (choix){
+            case 1: ajouterETD(); break;
+
+            case 0: printf("fin de traitement!"); break;
+    
+            default: printf("Choix errone! choix entre [1-6]\n\n"); break;
+        }
+        getch();
+
     } while (choix!=0);
 
-    switch (choix)
-    {
-    case 1: 
-        break;
-
-    case 0: printf("fin de traitement!");
-        break;
-    
-    default: printf("Choix errone! choix entre [1-6]\n\n");
-        break;
-    }
-    
     return 0;
 }
