@@ -97,6 +97,38 @@ void supprimerETD(void);
         rename("temp.txt","note.txt");                              
     }
     
- 
+    void supprimerETD(){
+        int codeR, tr = 0;
+        FILE* temp;
+
+        //Ouverture fichier bulletin.txt
+        fp = fopen("note.txt","rt");
+        if(fp==NULL){
+            printf("Impossible d'ouvrir le fichier\n");
+            exit(1);
+        }
+
+        //Ouverture fichier temp.txt
+        temp = fopen("temp.txt","wt");
+        if(temp==NULL){
+            printf("Impossible d'ouvrir le fichier\n");
+            exit(1);
+        }
+
+        printf("DONNEZ le code a sipprimer : "); scanf("%d",&codeR);
+
+        while (fscanf(fp, "%d\n%s\n%s\n%f\n",&code,nom,prenom,&noteE) == 4)
+        {
+            if (code != codeR){
+                fprintf(temp, "%d\n%s\n%s\n%f\n",code,nom,prenom,noteE);
+            }
+            else {tr = 1;}
+        }
+        if (tr==0) { printf("L'etudiant n'existe pas!!\n"); }
+        else { printf("L'etudiant est supprimer!"); }
+        fclose(fp); fclose(temp);
+        remove("note.txt");
+        rename("temp.txt","note.txt");                              
+    } 
 
 #endif  // FONCTIONS_H_INCLUDED
