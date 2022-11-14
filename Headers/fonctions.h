@@ -53,7 +53,7 @@ void supprimerETD(void);
             if (code == codeR){
                 tr = 1;
                 printf("CODE\tNOM\tPRENOM\tNOTE\n");
-                printf("%d\t%s\t%s\t%.2f",code, nom, prenom, noteE);
+                printf("%d\t%s\t%s\t%.2f\n",code, nom, prenom, noteE);
             }
         }
             if (tr==0){
