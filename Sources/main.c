@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+//#include <conio.h>
 #include "../Headers/fonctions.h"
 
 int main(){
@@ -9,7 +9,7 @@ int main(){
 
     do
     {
-        system("cls");
+        //system("cls");
         printf("----MENU GESTION DES ETUDIANTS----\n");
         printf("1-Nouvel Etudiant\n");
         printf("2-Afficher bulletin\n");
@@ -32,7 +32,7 @@ int main(){
     
             default: printf("Choix errone! choix entre [1-4]\n\n"); break;
         }
-        getch();
+        //getch();
 
     } while (choix!=0);
 
